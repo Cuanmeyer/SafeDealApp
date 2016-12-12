@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainScrollView"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#ADFF2F"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/dealImageView"
+            android:layout_gravity="center_horizontal" />
+        <TextView
+            android:text="Deal Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dealNameTextView"
+            android:paddingTop="20dp"
+            android:textSize="20dp"
+            android:textColor="@android:color/holo_green_dark" />
+        <TextView
+            android:text="Small Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/shortDescriptionTextView"
+            android:paddingTop="20dp"
+            android:textSize="16dp"
+            android:textColor="@android:color/holo_green_dark" />
+        <TextView
+            android:text="Description asldkfjalskdjflakdjflakjd fakldjf lakjdf adjf lakdjflkasdj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/descriptionTextView"
+            android:editable="False"
+            android:paddingTop="20dp"
+            android:textSize="12dp"
+            android:textColor="@android:color/holo_green_dark" />
+        <TextView
+            android:text="Price R350"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/priceTextView"
+            android:paddingTop="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_green_dark" />
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancelButton"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp" />
+        <EditText
+            android:inputType="number"
+            android:text="1"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:id="@+id/amountEditText"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:layout_centerHorizontal="true" />
+        <Button
+            android:text="Order Right Now!!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/orderButton"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</ScrollView>
