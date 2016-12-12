@@ -30,16 +30,39 @@ namespace SafeDeal.Android
             // Create your application here
 
             SetContentView(Resource.Layout.DealMenuView);
+            ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
+            AddTab("Favorites", Resource.Drawable.shake, new FavoriteDealFragment());
+            AddTab("Buyers", Resource.Drawable.shake, new BuyersFragment());
+            AddTab("Sellers", Resource.Drawable.shake, new SellerFragment());
 
-            dealListView = FindViewById<ListView>(Resource.Id.dealListView);
 
-           dealDataService = new DealDataService();
-
-            allDeals = dealDataService.GetAllDeals();
-
-            dealListView.Adapter = new DealListAdapter(this, allDeals);
-            dealListView.ItemClick += dealListView_ItemClick;
         }
+
+
+
+        private void AddTab(string tabText, int iconResourceId, Fragment view)
+        {
+            var tab = this.ActionBar.NewTab();
+            tab.SetText(tabText);
+            tab.SetIcon(iconResourceId);
+
+            tab.TabSelected += delegate (object sender, ActionBar.TabEventArgs e)
+            {
+                var fragment = this.FragmentManager.FindFragmentById(Resource.Id.fragmentContainer);
+                if (fragment != null)
+                    e.FragmentTransaction.Remove(fragment);
+                e.FragmentTransaction.Add(Resource.Id.fragmentContainer, view);
+            };
+
+            tab.TabUnselected += delegate (object sender, ActionBar.TabEventArgs e)
+            {
+                e.FragmentTransaction.Remove(view);
+            };
+
+            this.ActionBar.AddTab(tab);
+        }
+
+
 
         private void dealListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
