@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 using SafeDeal.Android.Adapters;
 using SafeDeal.Android.Fragments;
+using SafeDeal.Android;
 
 namespace SafeDeal.Android
 {

@@ -42,7 +42,7 @@ namespace SafeDeal.Android
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 
 
-            return inflater.Inflate(Resource.Layout.BuyersFragment, container, false);
+            return inflater.Inflate(Resource.Layout.BuyerFragment, container, false);
         }
     }
 }
