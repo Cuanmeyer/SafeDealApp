@@ -12,14 +12,34 @@ using Android.Widget;
 
 namespace SafeDeal.Android
 {
-    [Activity(Label = "AboutActivity")]
+    [Activity(Label = "About Safe Deal")]
     public class AboutActivity : Activity
     {
+        private TextView phoneNumberTextView;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
 
-            // Create your application here
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.AboutView);
+            FindViews();
+            HandleEvents();
+        }
+
+        private void FindViews()
+        {
+            phoneNumberTextView = FindViewById<TextView>(Resource.Id.phoneNumberTextView);
+        }
+        private void HandleEvents()
+        {
+            phoneNumberTextView.Click += PhoneNumberTextView_Click;
+        }
+
+        private void PhoneNumberTextView_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(Intent.ActionCall);
+            intent.SetData(global::Android.Net.Uri.Parse("tel:" + phoneNumberTextView.Text));
+            StartActivity(intent);
         }
     }
 }

@@ -42,7 +42,10 @@ namespace SafeDeal.Android
 
             //early demos
             DealDataService dataService = new DealDataService ();
-            selectedDeal = dataService.GetDealById (1);
+          
+
+            var selectedDealId = Intent.Extras.GetInt("selectedDealId");
+            selectedDeal = dataService.GetDealById(selectedDealId);
 
             // Create your application here
 
@@ -116,10 +119,11 @@ namespace SafeDeal.Android
         private void OrderButton_Click(object sender, EventArgs e)
         {
             var amount = Int32.Parse(amountEditText.Text);
-            var dialog = new AlertDialog.Builder(this);
-            dialog.SetTitle("Confirmation");
-            dialog.SetMessage("Your hot dog has been added to your cart!");
-            dialog.Show();
+            var intent = new Intent();
+            intent.PutExtra("selectedDealId", selectedDeal.DealId);
+            intent.PutExtra("amount", amount);
+            SetResult(Result.Ok, intent);
+            this.Finish();
             //cancelButton.Click += (object sender, System.EventArgs e) =>
             //{
             //    SetResult(Result.Canceled);
