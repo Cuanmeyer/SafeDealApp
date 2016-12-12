@@ -139,10 +139,10 @@ namespace SafeDeal.Android
         }
 
 
-        public void AddToCart(Deal hotDog, int amount)
+        public void AddToCart(Deal deal, int amount)
         {
             CartDataService cartDataService = new CartDataService();
-            cartDataService.AddCartItem(hotDog, amount);
+            cartDataService.AddCartItem(deal, amount);
         }
 
     }

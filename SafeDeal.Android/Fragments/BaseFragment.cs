@@ -41,7 +41,7 @@ namespace SafeDeal.Android.Fragments
 
             var intent = new Intent();
             intent.SetClass(this.Activity, typeof(DealDetailActivity));
-            intent.PutExtra("selectedHotDogId", deal.DealId);
+            intent.PutExtra("selectedDealId", deal.DealId);
 
             StartActivityForResult(intent, 100);
         }
