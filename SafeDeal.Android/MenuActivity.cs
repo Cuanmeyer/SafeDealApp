@@ -45,7 +45,10 @@ namespace SafeDeal.Android
         {
             orderButton.Click += OrderButton_Click;
             aboutButton.Click += AboutButton_Click;
+            takePictureButton.Click += TakePictureButton_Click;
         }
+
+       
 
         private void AboutButton_Click(object sender, EventArgs e)
         {
@@ -55,6 +58,12 @@ namespace SafeDeal.Android
         private void OrderButton_Click(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(DealMenuActivity));
+            StartActivity(intent);
+        }
+
+        private void TakePictureButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(TakePictureActivity));
             StartActivity(intent);
         }
     }
