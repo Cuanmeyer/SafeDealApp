@@ -38,7 +38,7 @@ namespace SafeDeal.Android.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
 
-            return inflater.Inflate(Resource.Layout.FavouriteDealFragment, container, false);
+            return inflater.Inflate(Resource.Layout.FavoriteDealFragment, container, false);
         }
     }
 }

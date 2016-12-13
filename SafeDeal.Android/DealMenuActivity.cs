@@ -12,6 +12,7 @@ using Android.Widget;
 using SafeDeal.Core.Service;
 using SafeDeal.Core.Model;
 using SafeDeal.Android.Adapters;
+using SafeDeal.Android.Fragments;
 
 namespace SafeDeal.Android
 {
@@ -31,7 +32,7 @@ namespace SafeDeal.Android
 
             SetContentView(Resource.Layout.DealMenuView);
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
-            AddTab("Favorites", Resource.Drawable.shake, new FavoriteDealFragment());
+            AddTab("Favorites", Resource.Drawable.shake, new FavouriteDealFragment());
             AddTab("Buyers", Resource.Drawable.shake, new BuyersFragment());
             AddTab("Sellers", Resource.Drawable.shake, new SellerFragment());
 
