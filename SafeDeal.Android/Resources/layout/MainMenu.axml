@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/takePictureButton" />
     <Button
-        android:text="Go to the SafeDeal Store"
+        android:text="Find a SafeDeal on Google Maps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mapButton" />
