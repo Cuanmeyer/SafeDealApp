@@ -23,12 +23,15 @@ namespace SafeDeal.Android
         private MapFragment mapFragment;
         private GoogleMap googleMap;
         private LatLng dealLocation;
+        private LatLng dealLocation2;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             dealLocation = new LatLng(-33.567055, 18.494389);
+            dealLocation2 = new LatLng(-33.567198, 18.491621);
 
             SetContentView(Resource.Layout.DealMapView);
 
@@ -71,11 +74,20 @@ namespace SafeDeal.Android
                 {
                     MarkerOptions markerOptions = new MarkerOptions();
                     markerOptions.SetPosition(dealLocation);
-                    markerOptions.SetTitle("Deals in Your Area");
+                    markerOptions.SetTitle("Deals in Your Areaa");
+                    markerOptions.SetSnippet("This dealer is available in your area");
                     googleMap.AddMarker(markerOptions);
-
                     CameraUpdate cameraUpdate = CameraUpdateFactory.NewLatLngZoom(dealLocation, 15);
                     googleMap.MoveCamera(cameraUpdate);
+
+
+                    MarkerOptions markerOptions2 = new MarkerOptions();
+                    markerOptions2.SetPosition(dealLocation2);
+                    markerOptions2.SetTitle("othaer chiiiibbps");
+                    googleMap.AddMarker(markerOptions2);
+                    CameraUpdate cameraUpdate2 = CameraUpdateFactory.NewLatLngZoom(dealLocation2, 15);
+                    googleMap.MoveCamera(cameraUpdate2);
+                  
                 }
             };
 
@@ -108,10 +120,14 @@ namespace SafeDeal.Android
 
             public void OnMapReady(GoogleMap googleMap)
             {
+               
+
                 Map = googleMap;
                 var handler = MapReady;
                 if (handler != null)
                     handler(this, EventArgs.Empty);
+
+
             }
         }
     }
