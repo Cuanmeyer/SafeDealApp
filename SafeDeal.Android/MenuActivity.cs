@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace SafeDeal.Android
 {
-    [Activity(Label = "Main Menu", MainLauncher = true)]
+    [Activity(Label = "Safe Deal", MainLauncher = true)]
     public class MenuActivity : Activity
     {
         private Button orderButton;
