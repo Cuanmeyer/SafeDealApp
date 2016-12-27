@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="AboutActivity.cs" />
     <Compile Include="Adapters\DealListAdapter.cs" />
+    <Compile Include="CloseToYouActivity.cs" />
     <Compile Include="DealMapActivity.cs" />
     <Compile Include="Fragments\BuyersFragment.cs" />
     <Compile Include="DealDetailActivity.cs" />
@@ -120,6 +121,12 @@
     <AndroidResource Include="Resources\layout\DealMapView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\CloseToYouView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\info_window.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -158,6 +165,9 @@
       <Visible>False</Visible>
       <Version>29.0.0.2</Version>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\xs.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets')" />

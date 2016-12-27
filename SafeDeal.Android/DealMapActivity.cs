@@ -75,7 +75,8 @@ namespace SafeDeal.Android
                     MarkerOptions markerOptions = new MarkerOptions();
                     markerOptions.SetPosition(dealLocation);
                     markerOptions.SetTitle("Deals in Your Areaa");
-                    markerOptions.SetSnippet("This dealer is available in your area");
+                    markerOptions.SetSnippet("This User is available in your area");
+                    
                     googleMap.AddMarker(markerOptions);
                     CameraUpdate cameraUpdate = CameraUpdateFactory.NewLatLngZoom(dealLocation, 15);
                     googleMap.MoveCamera(cameraUpdate);
@@ -83,7 +84,8 @@ namespace SafeDeal.Android
 
                     MarkerOptions markerOptions2 = new MarkerOptions();
                     markerOptions2.SetPosition(dealLocation2);
-                    markerOptions2.SetTitle("othaer chiiiibbps");
+                    markerOptions2.SetTitle("Mr D");
+                    markerOptions2.SetSnippet("Contact this User Now!");
                     googleMap.AddMarker(markerOptions2);
                     CameraUpdate cameraUpdate2 = CameraUpdateFactory.NewLatLngZoom(dealLocation2, 15);
                     googleMap.MoveCamera(cameraUpdate2);
@@ -96,19 +98,19 @@ namespace SafeDeal.Android
 
         private void CreateMapFragment()
         {
-            mapFragment = FragmentManager.FindFragmentByTag("map") as MapFragment;
+           // mapFragment = FragmentManager.FindFragmentByTag("map") as MapFragment;
 
             if (mapFragment == null)
             {
-                var googleMapOptions = new GoogleMapOptions()
-                    .InvokeMapType(GoogleMap.MapTypeSatellite)
-                    .InvokeZoomControlsEnabled(true)
-                    .InvokeCompassEnabled(true);
+                //var googleMapOptions = new GoogleMapOptions()
+                //    .InvokeMapType(GoogleMap.MapTypeSatellite)
+                //    .InvokeZoomControlsEnabled(true)
+                //    .InvokeCompassEnabled(true);
 
                 FragmentTransaction fragmentTransaction = FragmentManager.BeginTransaction();
-                mapFragment = MapFragment.NewInstance(googleMapOptions);
-                fragmentTransaction.Add(Resource.Id.mapFrameLayout, mapFragment, "map");
-                fragmentTransaction.Commit();
+                //mapFragment = MapFragment.NewInstance(googleMapOptions);
+                //fragmentTransaction.Add(Resource.Id.mapFrameLayout, mapFragment, "map");
+                //fragmentTransaction.Commit();
             }
         }
 
