@@ -29,6 +29,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mapButton" />
+  <Button
+       android:text="See Locations Close to You"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/closeToYouBtn" />
     <Button
         android:text="About Safe Deal"
         android:layout_width="match_parent"
