@@ -24,4 +24,6 @@
   </application>
   
 	<application android:label="SafeDeal.Android"></application>
+
+ 
 </manifest>

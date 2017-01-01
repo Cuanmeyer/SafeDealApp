@@ -2,13 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#20B2AA">
+    android:layout_height="match_parent">
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="120dp"
         android:id="@+id/logoImageView"
         android:src="@drawable/sdlogo" />
+    <Button
+        android:text="Members Only"
+        android:background="@drawable/MenuButtons"
+        android:layout_width="270dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/membersOnlyBtn" />
     <Button
         android:text="Order an Item Now!"
         android:layout_width="match_parent"
@@ -29,14 +35,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mapButton" />
-  <Button
-       android:text="See Locations Close to You"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/closeToYouBtn" />
+    <Button
+        android:text="See Locations Close to You"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/closeToYouBtn" />
     <Button
         android:text="About Safe Deal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/aboutButton" />
+    <Button
+        android:text="M"
+        android:layout_width="70dp"
+        android:layout_gravity="center"
+        android:layout_height="60dp"
+        android:background="@drawable/sticker"
+        android:id="@+id/MoneyButton" />
 </LinearLayout>

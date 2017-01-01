@@ -270,7 +270,9 @@ namespace SafeDeal.Android
 
         public void OnInfoWindowClick(Marker marker)
         {
-            Console.WriteLine("window was clicked");
+            Console.WriteLine("window click");
+        
+
         }
     }
 }
