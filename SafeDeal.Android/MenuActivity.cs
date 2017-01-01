@@ -21,6 +21,7 @@ namespace SafeDeal.Android
         private Button mapButton;
         private Button takePictureButton;
         private Button closeToYouBtn;
+        private Button membersOnlyBtn;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,6 +42,8 @@ namespace SafeDeal.Android
             mapButton = FindViewById<Button>(Resource.Id.mapButton);
             takePictureButton = FindViewById<Button>(Resource.Id.takePictureButton);
             closeToYouBtn = FindViewById<Button>(Resource.Id.closeToYouBtn);
+            membersOnlyBtn = FindViewById<Button>(Resource.Id.membersOnlyBtn);
+
         }
 
         private void HandleEvents()
@@ -50,6 +53,14 @@ namespace SafeDeal.Android
             takePictureButton.Click += TakePictureButton_Click;
             mapButton.Click += MapButton_Click;
             closeToYouBtn.Click += closeToYouBtn_Click;
+            membersOnlyBtn.Click += membersOnlyBtn_Click;
+            
+        }
+
+        private void membersOnlyBtn_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(MembersActivity));
+            StartActivity(intent);
         }
 
         private void closeToYouBtn_Click(object sender, EventArgs e)
