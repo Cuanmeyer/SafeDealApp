@@ -22,6 +22,7 @@ namespace SafeDeal.Android
 
         private ImageView safeDealPictureImageView;
         private Button takePictureButton;
+        private Button ViewSlidingTabBtn;
         private File imageDirectory;
         private File imageFile;
         private Bitmap imageBitmap;
@@ -50,11 +51,19 @@ namespace SafeDeal.Android
         {
             safeDealPictureImageView = FindViewById<ImageView>(Resource.Id.safeDealPictureImageView);
             takePictureButton = FindViewById<Button>(Resource.Id.takePictureButton);
+            ViewSlidingTabBtn = FindViewById<Button>(Resource.Id.tabBtn);
         }
 
         private void HandleEvents()
         {
             takePictureButton.Click += TakePictureButton_Click;
+            ViewSlidingTabBtn.Click += ViewSlidingTabBtn_Click;
+        }
+
+        private void ViewSlidingTabBtn_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(SlidingTabActivity));
+            StartActivity(intent);
         }
 
         private void TakePictureButton_Click(object sender, EventArgs e)
