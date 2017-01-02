@@ -96,6 +96,8 @@
     <Compile Include="AboutActivity.cs" />
     <Compile Include="Adapters\DealListAdapter.cs" />
     <Compile Include="CloseToYouActivity.cs" />
+    <Compile Include="CreateUserActivity.cs" />
+    <Compile Include="CreateUserDialog.cs" />
     <Compile Include="DealMapActivity.cs" />
     <Compile Include="Dialog_sign_up.cs" />
     <Compile Include="Fragments\BuyersFragment.cs" />
@@ -117,6 +119,8 @@
     <Compile Include="SlidingTabsFragment.cs" />
     <Compile Include="SlidingTabStrip.cs" />
     <Compile Include="TakePictureActivity.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserListAdapter.cs" />
     <Compile Include="Utility\ImageHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +180,15 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\SlidingTabMain.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CreateUserMain.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\row_user.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\dialog_create_user.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -240,6 +253,30 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\anim\SlideRight.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ButtonCreateStyle.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\edit_text_style.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_action_person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\actionbar.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_action_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_action_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\themes.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\SlideDown.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.32.961.0\build\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.32.961.0\build\Xamarin.GooglePlayServices.Basement.targets')" />
