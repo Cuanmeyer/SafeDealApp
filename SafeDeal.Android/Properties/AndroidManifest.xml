@@ -24,6 +24,7 @@
   </application>
   
 	<application android:label="SafeDeal.Android"></application>
+  <application android:label="ImageListView" android:icon="@drawable/xs" android:theme="@style/CustomActionBarTheme"></application>
 
  
 </manifest>
