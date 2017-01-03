@@ -36,7 +36,7 @@ namespace SafeDeal.Android
         {
             base.OnCreateView(inflater, container, savedInstanceState);
 
-            var view = inflater.Inflate(Resource.Layout.dialog_sign_up, container, false);
+            var view = inflater.Inflate(Resource.Layout.dialog_create_user, container, false);
             mButtonCreateUser = view.FindViewById<Button>(Resource.Id.btnCreateUser);
             txtName = view.FindViewById<EditText>(Resource.Id.txtName);
             txtNumber = view.FindViewById<EditText>(Resource.Id.txtNumber);
