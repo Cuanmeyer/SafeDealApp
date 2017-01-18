@@ -54,6 +54,7 @@ namespace SafeDeal.Android
 
             row.FindViewById<TextView>(Resource.Id.txtName).Text = mUsers[position].Name;
             row.FindViewById<TextView>(Resource.Id.txtNumber).Text = mUsers[position].Number;
+            row.FindViewById<TextView>(Resource.Id.txtCreateUserEmail).Text = mUsers[position].CreateUserEmail;
 
             ImageView pic = row.FindViewById<ImageView>(Resource.Id.imgPic);
 

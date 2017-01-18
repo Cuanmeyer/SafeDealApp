@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:minWidth="300dp"
-    android:minHeight="300dp">
+    android:minHeight="500dp">
     <EditText
         android:id="@+id/txtName"
         android:layout_width="match_parent"
@@ -28,6 +28,19 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Number"
+        android:paddingLeft="10dp"
+        android:textColor="#000" />
+    <EditText
+        android:layout_below="@id/txtNumber"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/txtCreateUserEmail"
+        android:background="@drawable/edit_text_style"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Email"
         android:paddingLeft="10dp"
         android:textColor="#000" />
     <RelativeLayout

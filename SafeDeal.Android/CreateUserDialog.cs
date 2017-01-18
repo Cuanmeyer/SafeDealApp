@@ -16,11 +16,13 @@ namespace SafeDeal.Android
     {
         public string Name { get; set; }
         public string Number { get; set; }
+        public string CreateUserEmail { get; set; }
 
-        public CreateUserEventArgs(string name, string number)
+        public CreateUserEventArgs(string name, string number, string createUserEmail)
         {
             Name = name;
             Number = number;
+            CreateUserEmail = createUserEmail;
         }
     }
 
@@ -29,6 +31,7 @@ namespace SafeDeal.Android
         private Button mButtonCreateUser;
         private EditText txtName;
         private EditText txtNumber;
+        private EditText txtCreateUserEmail;
 
         public event EventHandler<CreateUserEventArgs> OnCreateUser;
 
@@ -40,6 +43,7 @@ namespace SafeDeal.Android
             mButtonCreateUser = view.FindViewById<Button>(Resource.Id.btnCreateUser);
             txtName = view.FindViewById<EditText>(Resource.Id.txtName);
             txtNumber = view.FindViewById<EditText>(Resource.Id.txtNumber);
+            txtCreateUserEmail = view.FindViewById<EditText>(Resource.Id.txtCreateUserEmail);
 
             mButtonCreateUser.Click += mButtonCreateUser_Click;
             return view;
@@ -51,7 +55,7 @@ namespace SafeDeal.Android
             if (OnCreateUser != null)
             {
                 //Broadcast event
-                OnCreateUser.Invoke(this, new CreateUserEventArgs(txtName.Text, txtNumber.Text));
+                OnCreateUser.Invoke(this, new CreateUserEventArgs(txtName.Text, txtNumber.Text, txtCreateUserEmail.Text));
             }
 
             this.Dismiss();

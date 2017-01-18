@@ -59,9 +59,54 @@ namespace SafeDeal.Android
             if (resultCode == Result.Ok)
             {
                 Stream stream = ContentResolver.OpenInputStream(data.Data);
-                mSelectedPic.SetImageBitmap(BitmapFactory.DecodeStream(stream));
+                mSelectedPic.SetImageBitmap(DecodeBitmapFromStream(data.Data,150,150));
             }
         }
+
+        private Bitmap DecodeBitmapFromStream(global::Android.Net.Uri data, int requestedWidth, int requestedHeight)
+        {
+            //Decode with InJustDecodeBounds = true to check dimensions
+            Stream stream = ContentResolver.OpenInputStream(data);
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.InJustDecodeBounds = true;
+            BitmapFactory.DecodeStream(stream);
+
+            //Calculate InSamplesize
+            options.InSampleSize = CalculateInSampleSize(options, requestedWidth, requestedHeight);
+
+            //Decode bitmap with InSampleSize set
+            stream = ContentResolver.OpenInputStream(data); //Must read again
+            options.InJustDecodeBounds = false;
+            Bitmap bitmap = BitmapFactory.DecodeStream(stream, null, options);
+            return bitmap;
+        }
+
+
+        private int CalculateInSampleSize(BitmapFactory.Options options, int requestedWidth, int requestedHeight)
+        {
+            //Raw height and widht of image
+            int height = options.OutHeight;
+            int width = options.OutWidth;
+            int inSampleSize = 1;
+
+            if (height > requestedHeight || width > requestedWidth)
+            {
+                //the image is bigger than we want it to be
+                int halfHeight = height / 2;
+                int halfWidth = width / 2;
+
+                while ((halfHeight / inSampleSize) > requestedHeight && (halfWidth / inSampleSize) > requestedWidth)
+                {
+                    inSampleSize *= 2;
+                }
+
+            }
+
+            return inSampleSize;
+        }
+
+
+
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -80,7 +125,7 @@ namespace SafeDeal.Android
 
                     //Subscribe to event
                     dialog.OnCreateUser += dialog_OnCreateUser;
-                    dialog.Show(transaction, "create user");
+                    dialog.Show(transaction, "Create a user");
                     return true;
 
                 default:
@@ -91,7 +136,7 @@ namespace SafeDeal.Android
 
         void dialog_OnCreateUser(object sender, CreateUserEventArgs e)
         {
-            mUsers.Add(new User() { Name = e.Name, Number = e.Number });
+            mUsers.Add(new User() { Name = e.Name, Number = e.Number, CreateUserEmail = e.CreateUserEmail });
             mAdapter.NotifyDataSetChanged();
         }
     }
