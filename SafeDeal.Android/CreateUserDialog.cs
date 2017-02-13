@@ -9,17 +9,21 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.Net;
+using System.Collections.Specialized;
 
 namespace SafeDeal.Android
 {
-    class CreateUserEventArgs : EventArgs
+    public class CreateUserEventArgs : EventArgs
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Number { get; set; }
         public string CreateUserEmail { get; set; }
 
-        public CreateUserEventArgs(string name, string number, string createUserEmail)
+        public CreateUserEventArgs(int id, string name, string number, string createUserEmail)
         {
+            ID = id;
             Name = name;
             Number = number;
             CreateUserEmail = createUserEmail;
@@ -52,13 +56,36 @@ namespace SafeDeal.Android
 
         void mButtonCreateUser_Click(object sender, EventArgs e)
         {
-            if (OnCreateUser != null)
-            {
-                //Broadcast event
-                OnCreateUser.Invoke(this, new CreateUserEventArgs(txtName.Text, txtNumber.Text, txtCreateUserEmail.Text));
-            }
 
-            this.Dismiss();
+            WebClient client = new WebClient();
+            Uri uri = new Uri("https://safedeal.scm.azurewebsites.net/api/triggeredwebjobs/createUser/run");
+            NameValueCollection parameters = new NameValueCollection();
+            parameters.Add("Name", txtName.Text);
+            parameters.Add("Number", txtNumber.Text);
+            parameters.Add("CreateUserEmail", txtCreateUserEmail.Text);
+            client.UploadValuesCompleted += Client_UploadValuesCompleted;
+            client.UploadValuesAsync(uri, parameters);
+
+         
+        }
+
+         void Client_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
+        {
+            Activity.RunOnUiThread(() =>
+            {
+                string id = Encoding.UTF8.GetString(e.Result);
+                int newID = 0;
+                int.TryParse(id, out newID);
+
+                if (OnCreateUser != null)
+                {
+                    //Broadcast event
+                    OnCreateUser.Invoke(this, new CreateUserEventArgs(newID, txtName.Text, txtNumber.Text, txtCreateUserEmail.Text));
+                }
+
+                this.Dismiss();
+            });
+          
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)

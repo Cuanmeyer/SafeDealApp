@@ -14,6 +14,7 @@ namespace SafeDeal.Android
 {
     class User
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Number { get; set; }
         public byte [] Image { get; set; }
