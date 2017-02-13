@@ -3,5 +3,10 @@
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">SafeDeal.Android</string>
   <string name="closeToYouMsg">Start Location Updates</string>
+  <string name="add_textbox_hint">Add a todo item</string>
+  <string name="add_button_text">Add</string>
+  <string name="mobile_services">Azure App Service</string>
+  <string name="menu_refresh">Refresh</string>
+  <string name="checkbox_text">Item Text</string>
 
 </resources>

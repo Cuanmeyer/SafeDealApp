@@ -136,7 +136,7 @@ namespace SafeDeal.Android
 
         void dialog_OnCreateUser(object sender, CreateUserEventArgs e)
         {
-            mUsers.Add(new User() { Name = e.Name, Number = e.Number, CreateUserEmail = e.CreateUserEmail });
+            mUsers.Add(new User() {ID = e.ID, Name = e.Name, Number = e.Number, CreateUserEmail = e.CreateUserEmail });
             mAdapter.NotifyDataSetChanged();
         }
     }
