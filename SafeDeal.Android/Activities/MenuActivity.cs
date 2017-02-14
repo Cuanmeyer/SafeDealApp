@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SafeDeal.Android.Activities;
 
 namespace SafeDeal.Android
 {
@@ -54,7 +55,14 @@ namespace SafeDeal.Android
             mapButton.Click += MapButton_Click;
             closeToYouBtn.Click += closeToYouBtn_Click;
             membersOnlyBtn.Click += membersOnlyBtn_Click;
-            
+            cartButton.Click += cartButton_Click;
+
+        }
+
+        private void cartButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(ToDoActivity));
+            StartActivity(intent);
         }
 
         private void membersOnlyBtn_Click(object sender, EventArgs e)

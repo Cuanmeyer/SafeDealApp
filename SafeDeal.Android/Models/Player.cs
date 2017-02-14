@@ -9,6 +9,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Java.Interop;
+using SafeDeal.Helpers;
 
 namespace SafeDeal.Android.Models
 {

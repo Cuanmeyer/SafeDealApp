@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SafeDeal.Android.Fragments;
 
 namespace SafeDeal.Android
 {
@@ -34,10 +35,10 @@ namespace SafeDeal.Android
         {
             base.OnCreate(savedInstanceState);
 
-            SetContentView(Resource.Layout.avatar_sign_In);
+            SetContentView(Resource.Layout.activity_sign_in);
             var edit = Intent != null && Intent.GetBooleanExtra(ExtraEdit, false);
             if (savedInstanceState == null)
-                FragmentManager.BeginTransaction().Replace(Resource.Id.sign_in_container, SignInFragment.Create(edit)).Commit();
+                FragmentManager.BeginTransaction().Replace(Resource.Id.sign_in_container, AvatarFragment.Create(edit)).Commit();
         }
     }
 }
