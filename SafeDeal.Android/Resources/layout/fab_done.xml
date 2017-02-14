@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright 2015 Google Inc.
   ~
@@ -12,4 +13,12 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
-  --><md5c3006cea5dd429221ee1619e51aec34b.DoneFab android:id="@+id/done" android:layout_width="@dimen/size_fab" android:layout_height="@dimen/size_fab" android:layout_gravity="bottom|end" android:layout_marginBottom="@dimen/spacing_double" android:layout_marginEnd="@dimen/spacing_double" xmlns:android="http://schemas.android.com/apk/res/android" />
+  -->
+<md5c3006cea5dd429221ee1619e51aec34b.DoneFab
+    android:id="@+id/done"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/size_fab"
+    android:layout_height="@dimen/size_fab"
+    android:layout_gravity="bottom|end"
+    android:layout_marginBottom="@dimen/spacing_double"
+    android:layout_marginEnd="@dimen/spacing_double" />

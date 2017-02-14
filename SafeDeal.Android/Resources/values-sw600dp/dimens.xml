@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright 2015 Google Inc.
   ~
@@ -12,4 +13,7 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
-  --><resources><dimen name="spacing_double">24dp</dimen></resources>
+  -->
+<resources>
+    <dimen name="spacing_double">24dp</dimen>
+</resources>
