@@ -13,8 +13,7 @@ using System.IO;
 using Android.Graphics;
 using System.Net;
 using System.Collections.Specialized;
-
-
+using SafeDeal.Android.Utility;
 
 namespace SafeDeal.Android
 {
@@ -25,6 +24,7 @@ namespace SafeDeal.Android
         private BaseAdapter<User> mAdapter;
         private List<User> mUsers;
         private ImageView mSelectedPic;
+        private Button _createUserButton;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -39,6 +39,13 @@ namespace SafeDeal.Android
 
             mAdapter = new UserListAdapter(this, Resource.Layout.row_user, mUsers, action);
             mListView.Adapter = mAdapter;
+
+            _createUserButton = FindViewById<Button>(Resource.Id.btnCreateUser);
+            //_createUserButton.SetOnClickListener+= (sender, obj){
+
+                // Get text from edittext
+                UserDetails.Name = "this is test ";
+            //} 
 
 
         }

@@ -61,7 +61,7 @@ namespace SafeDeal.Android
 
         private void cartButton_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(ToDoActivity));
+            var intent = new Intent(this, typeof(SpecialDealActivity));
             StartActivity(intent);
         }
 

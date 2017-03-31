@@ -57,36 +57,46 @@ namespace SafeDeal.Android
         void mButtonCreateUser_Click(object sender, EventArgs e)
         {
 
-            WebClient client = new WebClient();
-            Uri uri = new Uri("https://safedeal.scm.azurewebsites.net/api/triggeredwebjobs/createUser/run");
-            NameValueCollection parameters = new NameValueCollection();
-            parameters.Add("Name", txtName.Text);
-            parameters.Add("Number", txtNumber.Text);
-            parameters.Add("CreateUserEmail", txtCreateUserEmail.Text);
-            client.UploadValuesCompleted += Client_UploadValuesCompleted;
-            client.UploadValuesAsync(uri, parameters);
+            //WebClient client = new WebClient();
+            //Uri uri = new Uri("https://safedeal.scm.azurewebsites.net/api/triggeredwebjobs/createUser/run");
+            //NameValueCollection parameters = new NameValueCollection();
+            //parameters.Add("Name", txtName.Text);
+            //parameters.Add("Number", txtNumber.Text);
+            //parameters.Add("CreateUserEmail", txtCreateUserEmail.Text);
+            //client.UploadValuesCompleted += Client_UploadValuesCompleted;
+            //client.UploadValuesAsync(uri, parameters);
 
-         
+
+            //if (OnCreateUser != null)
+            //{
+            //    //Broadcast event
+            //    OnCreateUser.Invoke(this, new CreateUserEventArgs(txtName.Text, txtNumber.Text, txtCreateUserEmail.Text));
+            //}
+
+            //this.Dismiss();
+
+
+
         }
 
-         void Client_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
-        {
-            Activity.RunOnUiThread(() =>
-            {
-                string id = Encoding.UTF8.GetString(e.Result);
-                int newID = 0;
-                int.TryParse(id, out newID);
+        //void Client_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
+        //{
+        //    Activity.RunOnUiThread(() =>
+        //    {
+        //        string id = Encoding.UTF8.GetString(e.Result);
+        //        int newID = 0;
+        //        int.TryParse(id, out newID);
 
-                if (OnCreateUser != null)
-                {
-                    //Broadcast event
-                    OnCreateUser.Invoke(this, new CreateUserEventArgs(newID, txtName.Text, txtNumber.Text, txtCreateUserEmail.Text));
-                }
+        //        if (OnCreateUser != null)
+        //        {
+        //            //Broadcast event
+        //            OnCreateUser.Invoke(this, new CreateUserEventArgs(newID, txtName.Text, txtNumber.Text, txtCreateUserEmail.Text));
+        //        }
 
-                this.Dismiss();
-            });
+        //        this.Dismiss();
+        //    });
           
-        }
+        //}
 
         public override void OnActivityCreated(Bundle savedInstanceState)
         {

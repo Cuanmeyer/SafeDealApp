@@ -13,7 +13,7 @@ using Android.Locations;
 using Android.Util;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
-
+using SafeDeal.Android.Utility;
 
 namespace SafeDeal.Android
 {
@@ -237,6 +237,7 @@ namespace SafeDeal.Android
 
             mMap.MarkerDragEnd += MMap_MarkerDragEnd;
 
+
             mMap.SetInfoWindowAdapter(this);
             mMap.SetOnInfoWindowClickListener(this);
 
@@ -262,7 +263,7 @@ namespace SafeDeal.Android
         public View GetInfoWindow(Marker marker)
         {
             View view = LayoutInflater.Inflate(Resource.Layout.info_window, null, false);
-            view.FindViewById<TextView>(Resource.Id.txtName).Text = "Goza";
+            view.FindViewById<TextView>(Resource.Id.txtName).Text = UserDetails.Name;
             view.FindViewById<TextView>(Resource.Id.txtAddress).Text = "39 Doffadil Street";
             view.FindViewById<TextView>(Resource.Id.txtHours).Text = "11:00am - 20:00pm";
             return view;
@@ -272,7 +273,7 @@ namespace SafeDeal.Android
         {
             Console.WriteLine("window click");
         
-
         }
+
     }
 }
