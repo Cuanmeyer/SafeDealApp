@@ -13,7 +13,7 @@ using SafeDeal.Android.Activities;
 
 namespace SafeDeal.Android
 {
-    [Activity(MainLauncher = true, Label = "Safe Deal")]
+    [Activity(Label = "Safe Deal")]
     public class MenuActivity : Activity
     {
         private Button orderButton;
